@@ -26,7 +26,13 @@ const uppercaseOf = function (strings) {
 };
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
-const firstCharactersOf = function (strings) { };
+const firstCharacter = function (string) {
+  return string.at(0);
+};
+
+const firstCharactersOf = function (strings) { 
+  return strings.map(firstCharacter);
+};
 
 // truth values of [0, 1, 2, 3] => [false, true, true, true]
 // Assume non-zero numbers are true, and zero is false
