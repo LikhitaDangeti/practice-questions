@@ -49,7 +49,7 @@ const reverseString = function (string) {
   return string.split('').reverse().join('');
 };
 
-const reversedStringsOf = function (strings) { 
+const reversedStringsOf = function (strings) {
   return strings.map(reverseString);
 };
 
@@ -62,12 +62,18 @@ const doubleLettersString = function (string) {
   return string.split('').map(doubleLetters).join('');
 };
 
-const doubleLettersOf = function (strings) { 
+const doubleLettersOf = function (strings) {
   return strings.map(doubleLettersString);
 };
 
 // boolean negation of [true, false, true] => [false, true, false]
-const negatedBooleansOf = function (booleans) { };
+const negation = function (boolean) {
+  return !boolean;
+};
+
+const negatedBooleansOf = function (booleans) {
+  return booleans.map(negation);
+};
 
 // character codes of ["a", "b", "c"] => [97, 98, 99]
 // Use the `charCodeAt` method on each string
