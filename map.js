@@ -1,14 +1,20 @@
 // squares of [1, 2, 3] => [1, 4, 9]
 const square = function (number) {
   return Math.pow(number, 2);
-}
+};
 
 const squaresOf = function (numbers) {
   return numbers.map(square);
 };
 
 // lengths of ["apple", "banana", "kiwi"] => [5, 6, 4]
-const lengthsOf = function (strings) { };
+const lengthOfString = function (string) {
+  return string.length;
+};
+
+const lengthsOf = function (strings) {
+  return strings.map(lengthOfString);
+};
 
 // uppercase of ["hello", "world"] => ["HELLO", "WORLD"]
 const uppercaseOf = function (strings) { };
