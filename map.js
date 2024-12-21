@@ -140,14 +140,24 @@ const countVowelsOf = function (strings) {
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
 const reversedArray = function (array) {
   return array.reverse();
-}
+};
 
 const reversedArraysOf = function (arrays) { 
   return arrays.map(reversedArray);
 };
 
 // remove vowels from ["apple", "banana", "grape"] => ["ppl", "bnn", "grp"]
-const withoutVowelsOf = function (strings) { };
+const isConsonant = function(char) {
+  return !isVowel(char);
+};
+
+const removeVowels = function(string) {
+  return string.split("").filter(isConsonant).join("");
+};
+
+const withoutVowelsOf = function (strings) { 
+  return strings.map(removeVowels);
+};
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
 // Example: cumulative sum of [1, 2, 3] is [1, 1+2, 1+2+3]
