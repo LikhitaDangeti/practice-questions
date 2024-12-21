@@ -39,21 +39,32 @@ const firstCharactersOf = function (strings) {
 const truthValue = function (number) {
   return number !== 0;
 };
+
 const truthValuesOf = function (numbers) {
   return numbers.map(truthValue);
 };
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
 const reverseString = function (string) {
-  return string.split('').reverse().join("");
+  return string.split('').reverse().join('');
 };
 
 const reversedStringsOf = function (strings) { 
   return strings.map(reverseString);
 };
 
-// double letters of ["cat", "dog", "bat"] => ["ccaat", "ddoog", "bbaatt"]
-const doubleLettersOf = function (strings) { };
+// double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
+const doubleLetters = function (char) {
+  return char.repeat(2);
+};
+
+const doubleLettersString = function (string) {
+  return string.split('').map(doubleLetters).join('');
+};
+
+const doubleLettersOf = function (strings) { 
+  return strings.map(doubleLettersString);
+};
 
 // boolean negation of [true, false, true] => [false, true, false]
 const negatedBooleansOf = function (booleans) { };
