@@ -174,7 +174,11 @@ const capitalizedFirstLettersOf = function (strings) { };
 const wordLengthsOf = function (strings) { };
 
 // flatten nested arrays of [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
-const flattenedArraysOf = function (arrays) { };
+const flattenedArraysOf = function (arrays) { 
+  return arrays.map(function (array) {
+    return array.flat();
+  })
+};
 
 // sort letters in ["cat", "bat", "rat"] alphabetically => ["act", "abt", "art"]
 const sortedLettersOf = function (strings) { };
