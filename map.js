@@ -1,56 +1,44 @@
 // squares of [1, 2, 3] => [1, 4, 9]
-const square = function (number) {
-  return Math.pow(number, 2);
-};
-
 const squaresOf = function (numbers) {
-  return numbers.map(square);
+  return numbers.map(function (number) {
+    return Math.pow(number, 2);
+  });
 };
 
 // lengths of ["apple", "banana", "kiwi"] => [5, 6, 4]
-const lengthOfString = function (string) {
-  return string.length;
-};
-
 const lengthsOf = function (strings) {
-  return strings.map(lengthOfString);
+  return strings.map(function (string) {
+    return string.length;
+  });
 };
 
 // uppercase of ["hello", "world"] => ["HELLO", "WORLD"]
-const uppercase = function (string) {
-  return string.toUpperCase();
-};
-
 const uppercaseOf = function (strings) {
-  return strings.map(uppercase);
+  return strings.map(function (string) {
+    return string.toUpperCase();
+  });
 };
 
 // first characters of ["apple", "banana", "kiwi"] => ["a", "b", "k"]
-const firstCharacter = function (string) {
-  return string.at(0);
-};
-
 const firstCharactersOf = function (strings) {
-  return strings.map(firstCharacter);
+  return strings.map(function (string) {
+    return string.at(0);
+  });
 };
 
 // truth values of [0, 1, 2, 3] => [false, true, true, true]
 // Assume non-zero numbers are true, and zero is false
-const truthValue = function (number) {
-  return number !== 0;
-};
-
 const truthValuesOf = function (numbers) {
-  return numbers.map(truthValue);
+  return numbers.map(function (number) {
+    return number !== 0;
+  });
 };
 
 // reverse strings of ["hello", "world"] => ["olleh", "dlrow"]
-const reverseString = function (string) {
-  return string.split('').reverse().join('');
-};
-
 const reversedStringsOf = function (strings) {
-  return strings.map(reverseString);
+  return strings.map(function (string) {
+    return [...string].reverse().join('');
+  });
 };
 
 // double letters of ["cat", "dog", "bat"] => ["ccaatt", "ddoogg", "bbaatt"]
@@ -58,68 +46,53 @@ const doubleLetters = function (char) {
   return char.repeat(2);
 };
 
-const doubleLettersString = function (string) {
-  return string.split('').map(doubleLetters).join('');
-};
-
 const doubleLettersOf = function (strings) {
-  return strings.map(doubleLettersString);
+  return strings.map(function (string) {
+    return [...string].map(doubleLetters).join('');
+  });
 };
 
 // boolean negation of [true, false, true] => [false, true, false]
-const negation = function (boolean) {
-  return !boolean;
-};
-
 const negatedBooleansOf = function (booleans) {
-  return booleans.map(negation);
+  return booleans.map(function (boolean) {
+    return !boolean;
+  });
 };
 
 // character codes of ["a", "b", "c"] => [97, 98, 99]
 // Use the `charCodeAt` method on each string
-const charCode = function (string) {
-  return string.charCodeAt();
-}
-
 const charCodesOf = function (strings) {
-  return strings.map(charCode);
+  return strings.map(function (string) {
+    return string.charCodeAt();
+  });
 };
 
 // extract domain names from ["user1@gmail.com", "admin@yahoo.com"] => ["gmail.com", "yahoo.com"]
-const domainName = function (email) {
-  const atTheRateIndex = email.indexOf('@');
-  return email.slice(atTheRateIndex + 1);
-};
-
 const domainNamesOf = function (emails) {
-  return emails.map(domainName);
+  return emails.map(function (email) {
+    return email.slice(email.indexOf('@') + 1);
+  });
 };
 
 // split words in ["hello world", "goodbye moon"] => [["hello", "world"], ["goodbye", "moon"]]
-const splitWord = function (word) {
-  return word.split(' ');
-};
-
 const splitWordsOf = function (strings) {
-  return strings.map(splitWord);
+  return strings.map(function (word) {
+    return word.split(' ');
+  });
 };
 
 // join arrays of [["a", "b"], ["c", "d"]] => ["ab", "cd"]
-const joinedArray = function (array) {
-  return array.join("");
-};
-
 const joinedArraysOf = function (arrayOfArrays) {
-  return arrayOfArrays.map(joinedArray);
+  return arrayOfArrays.map(function (array) {
+    return array.join("");
+  });
 };
 
 // repeat strings in ["hi", "bye"] => ["hihi", "byebye"]
-const repeatString = function (string) {
-  return string.repeat(2);
-};
-
 const repeatedStringsOf = function (strings) {
-  return strings.map(repeatString);
+  return strings.map(function (string) {
+    return string.repeat(2);
+  });
 };
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
@@ -129,21 +102,17 @@ const isVowel = function (char) {
   return VOWEL.includes(char);
 };
 
-const countVowels = function (string) {
-  return string.split("").filter(isVowel).length;
-};
-
 const countVowelsOf = function (strings) {
-  return strings.map(countVowels);
+  return strings.map(function (string) {
+    return [...string].filter(isVowel).length;
+  });
 };
 
 // reverse arrays of [[1, 2, 3], [4, 5, 6]] => [[3, 2, 1], [6, 5, 4]]
-const reversedArray = function (array) {
-  return array.reverse();
-};
-
 const reversedArraysOf = function (arrays) {
-  return arrays.map(reversedArray);
+  return arrays.map(function (array) {
+    return array.reverse();
+  });
 };
 
 // remove vowels from ["apple", "banana", "grape"] => ["ppl", "bnn", "grp"]
@@ -151,12 +120,10 @@ const isConsonant = function (char) {
   return !isVowel(char);
 };
 
-const removeVowels = function (string) {
-  return string.split("").filter(isConsonant).join("");
-};
-
 const withoutVowelsOf = function (strings) {
-  return strings.map(removeVowels);
+  return strings.map(function (string) {
+    return [...string].filter(isConsonant).join("");
+  });
 };
 
 // cumulative sums of [[1, 2, 3], [4, 5, 6]] => [[1, 3, 6], [4, 9, 15]]
@@ -174,7 +141,9 @@ const cumulativeSumsOf = function (arrays) {
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
 const reversedWordsOf = function (strings) {
-  return strings.map(reverseString);
+  return strings.map(function (string) {
+    return [...string].reverse().join('');
+  });
 };
 
 // extract unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
@@ -192,12 +161,10 @@ const range = function(from, to, step) {
   return numbers;
 };
 
-const rangeTillNumber = function (number) {
-  return range(0, number, 1);
-};
-
 const rangesOf = function (numbers) { 
-  return numbers.map(rangeTillNumber);
+  return numbers.map(function (number) {
+    return range(0, number, 1);
+  });
 };
 
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
