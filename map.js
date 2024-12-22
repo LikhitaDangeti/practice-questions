@@ -211,10 +211,18 @@ const calculateAreas = function (rectangles) {
 };
 
 // extract boolean flags from [{ active: true }, { active: false }] => [true, false]
-const extractFlags = function (objects) { };
+const extractFlags = function (objects) { 
+  return objects.map(function(object) {
+    return object.active;
+  })
+};
 
 // concatenate first and last names from [{ firstName: "Alice", lastName: "Smith" }, { firstName: "Bob", lastName: "Brown" }] => ["Alice Smith", "Bob Brown"]
-const fullNames = function (objects) { };
+const fullNames = function (objects) { 
+  return objects.map(function(object) {
+    return object.firstName + ' ' + object.lastName;
+  })
+};
 
 // calculate total prices from [{ price: 10, quantity: 2 }, { price: 5, quantity: 4 }] => [20, 20]
 // (price * quantity)
