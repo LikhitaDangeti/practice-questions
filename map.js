@@ -151,7 +151,7 @@ const reversedWordsOf = function (strings) {
 const uniqueCharactersOf = function (strings) { };
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
-const range = function(from, to, step) {
+const range = function (from, to, step) {
   const numbers = [];
 
   for (let number = from; number < to; number += step) {
@@ -161,7 +161,7 @@ const range = function(from, to, step) {
   return numbers;
 };
 
-const rangesOf = function (numbers) { 
+const rangesOf = function (numbers) {
   return numbers.map(function (number) {
     return range(0, number, 1);
   });
@@ -183,58 +183,62 @@ const sortedLettersOf = function (strings) { };
 const wrappedStringsOf = function (strings) { };
 
 // extract names from [{ name: "Alice" }, { name: "Bob" }] => ["Alice", "Bob"]
-const extractNames = function (objects) { 
-  return objects.map(function(object) {
+const extractNames = function (objects) {
+  return objects.map(function (object) {
     return object.name;
   })
 };
 
 // extract ages from [{ age: 25 }, { age: 30 }] => [25, 30]
-const extractAges = function (objects) { 
+const extractAges = function (objects) {
   return objects.map(function (object) {
     return object.age;
   })
 };
 
 // extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"]
-const firstLettersOfNames = function (objects) { 
+const firstLettersOfNames = function (objects) {
   return objects.map(function (object) {
     return object.name.at(0);
   })
 };
 
 // calculate areas from [{ width: 2, height: 3 }, { width: 4, height: 5 }] => [6, 20]
-const calculateAreas = function (rectangles) { 
+const calculateAreas = function (rectangles) {
   return rectangles.map(function (rectangle) {
     return rectangle.width * rectangle.height;
   })
 };
 
 // extract boolean flags from [{ active: true }, { active: false }] => [true, false]
-const extractFlags = function (objects) { 
-  return objects.map(function(object) {
+const extractFlags = function (objects) {
+  return objects.map(function (object) {
     return object.active;
   })
 };
 
 // concatenate first and last names from [{ firstName: "Alice", lastName: "Smith" }, { firstName: "Bob", lastName: "Brown" }] => ["Alice Smith", "Bob Brown"]
-const fullNames = function (objects) { 
-  return objects.map(function(object) {
+const fullNames = function (objects) {
+  return objects.map(function (object) {
     return object.firstName + ' ' + object.lastName;
   })
 };
 
 // calculate total prices from [{ price: 10, quantity: 2 }, { price: 5, quantity: 4 }] => [20, 20]
 // (price * quantity)
-const totalPrices = function (objects) { 
-  return objects.map(function(object){
+const totalPrices = function (objects) {
+  return objects.map(function (object) {
     return object.price * object.quantity;
   })
 };
 
 // determine if a person is an adult from [{ name: "Alice", age: 17 }, { name: "Bob", age: 22 }] => [false, true]
 // (age >= 18)
-const isAdult = function (objects) { };
+const isAdult = function (objects) {
+  return objects.map(function (object) {
+    return object.age >= 18;
+  })
+};
 
 // create abbreviations from [{ city: "New York", country: "USA" }, { city: "Los Angeles", country: "USA" }] => ["NY, USA", "LA, USA"]
 const abbreviations = function (objects) { };
