@@ -190,7 +190,11 @@ const extractNames = function (objects) {
 };
 
 // extract ages from [{ age: 25 }, { age: 30 }] => [25, 30]
-const extractAges = function (objects) { };
+const extractAges = function (objects) { 
+  return objects.map(function (object) {
+    return object.age;
+  })
+};
 
 // extract the first letters of names from [{ name: "Alice" }, { name: "Bob" }] => ["A", "B"]
 const firstLettersOfNames = function (objects) { };
