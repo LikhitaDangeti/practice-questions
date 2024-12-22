@@ -157,10 +157,10 @@ const pushElements = function (array, element) {
 };
 
 const removeDuplicates = function (string) {
-  return string.split('').reduce(pushElements, []).join('').slice(0,3);
+  return string.split('').reduce(pushElements, []).join('').slice(0, 3);
 };
 
-const uniqueCharactersOf = function (strings) { 
+const uniqueCharactersOf = function (strings) {
   return strings.map(removeDuplicates);
 };
 
@@ -184,11 +184,11 @@ const rangesOf = function (numbers) {
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
 const capitalizedString = function (string) {
   return string.split(' ').map(function (string) {
-    return string.at(0).toUpperCase()+ string.slice(1);
+    return string.at(0).toUpperCase() + string.slice(1);
   }).join(' ');
 }
 
-const capitalizedFirstLettersOf = function (strings) { 
+const capitalizedFirstLettersOf = function (strings) {
   return strings.map(capitalizedString);
 };
 
@@ -199,26 +199,26 @@ const wordLength = function (string) {
   })
 };
 
-const wordLengthsOf = function (strings) { 
+const wordLengthsOf = function (strings) {
   return strings.map(wordLength);
 };
 
 // flatten nested arrays of [[1, [2, 3]], [4, [5, 6]]] => [[1, 2, 3], [4, 5, 6]]
-const flattenedArraysOf = function (arrays) { 
+const flattenedArraysOf = function (arrays) {
   return arrays.map(function (array) {
     return array.flat();
   })
 };
 
 // sort letters in ["cat", "bat", "rat"] alphabetically => ["act", "abt", "art"]
-const sortedLettersOf = function (strings) { 
+const sortedLettersOf = function (strings) {
   return strings.map(function (string) {
     return [...string].sort().join('');
   })
 };
 
 // wrap strings in brackets ["apple", "banana"] => ["[apple]", "[banana]"]
-const wrappedStringsOf = function (strings) { 
+const wrappedStringsOf = function (strings) {
   return strings.map(function (string) {
     return [string];
   })
@@ -283,7 +283,18 @@ const isAdult = function (objects) {
 };
 
 // create abbreviations from [{ city: "New York", country: "USA" }, { city: "Los Angeles", country: "USA" }] => ["NY, USA", "LA, USA"]
-const abbreviations = function (objects) { };
+const isUpperCase = function (letter) {
+  return letter.toUpperCase() === letter && letter !== ' ';
+};
+
+const cityAbbreviation = function (object) {
+  const abbreviation = [...object.city].filter(isUpperCase).join('');
+  return [abbreviation, object.country].join(', ');
+};
+
+const abbreviations = function (objects) { 
+  return objects.map(cityAbbreviation);
+};
 
 // extract scores for math tests from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [90, 80]
 const mathScores = function (objects) {
@@ -307,14 +318,14 @@ const fullNameAndAge = function (objects) {
 };
 
 // extract scores from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [[90, 85], [80, 75]]
-const extractScores = function (objects) { 
+const extractScores = function (objects) {
   return objects.map(function (object) {
     return [object.scores.math, object.scores.english];
   })
 };
 
 // extract key-value pairs from [{ key: "a", value: 1 }, { key: "b", value: 2 }] => [["a", 1], ["b", 2]]
-const keyValuePairs = function (objects) { 
+const keyValuePairs = function (objects) {
   return objects.map(function (object) {
     return [object.key, object.value];
   })
