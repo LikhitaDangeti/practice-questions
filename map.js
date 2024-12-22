@@ -81,7 +81,7 @@ const charCode = function (string) {
   return string.charCodeAt();
 }
 
-const charCodesOf = function (strings) { 
+const charCodesOf = function (strings) {
   return strings.map(charCode);
 };
 
@@ -91,7 +91,7 @@ const domainName = function (email) {
   return email.slice(atTheRateIndex + 1);
 };
 
-const domainNamesOf = function (emails) { 
+const domainNamesOf = function (emails) {
   return emails.map(domainName);
 };
 
@@ -100,7 +100,7 @@ const splitWord = function (word) {
   return word.split(' ');
 };
 
-const splitWordsOf = function (strings) { 
+const splitWordsOf = function (strings) {
   return strings.map(splitWord);
 };
 
@@ -109,7 +109,7 @@ const joinedArray = function (array) {
   return array.join("");
 };
 
-const joinedArraysOf = function (arrayOfArrays) { 
+const joinedArraysOf = function (arrayOfArrays) {
   return arrayOfArrays.map(joinedArray);
 };
 
@@ -118,22 +118,22 @@ const repeatString = function (string) {
   return string.repeat(2);
 };
 
-const repeatedStringsOf = function (strings) { 
+const repeatedStringsOf = function (strings) {
   return strings.map(repeatString);
 };
 
 // count vowels in ["apple", "banana", "grape"] => [2, 3, 2]
 const VOWEL = 'aeiouAEIOU';
 
-const isVowel = function(char) {
+const isVowel = function (char) {
   return VOWEL.includes(char);
 };
 
-const countVowels = function(string) {
+const countVowels = function (string) {
   return string.split("").filter(isVowel).length;
 };
 
-const countVowelsOf = function (strings) { 
+const countVowelsOf = function (strings) {
   return strings.map(countVowels);
 };
 
@@ -142,20 +142,20 @@ const reversedArray = function (array) {
   return array.reverse();
 };
 
-const reversedArraysOf = function (arrays) { 
+const reversedArraysOf = function (arrays) {
   return arrays.map(reversedArray);
 };
 
 // remove vowels from ["apple", "banana", "grape"] => ["ppl", "bnn", "grp"]
-const isConsonant = function(char) {
+const isConsonant = function (char) {
   return !isVowel(char);
 };
 
-const removeVowels = function(string) {
+const removeVowels = function (string) {
   return string.split("").filter(isConsonant).join("");
 };
 
-const withoutVowelsOf = function (strings) { 
+const withoutVowelsOf = function (strings) {
   return strings.map(removeVowels);
 };
 
@@ -163,17 +163,17 @@ const withoutVowelsOf = function (strings) {
 // Example: cumulative sum of [1, 2, 3] is [1, 1+2, 1+2+3]
 const cumulativeSum = function (array) {
   let cummulation = 0;
-  return array.map(function(number) {
+  return array.map(function (number) {
     return cummulation = cummulation + number;
   })
 };
 
-const cumulativeSumsOf = function (arrays) { 
+const cumulativeSumsOf = function (arrays) {
   return arrays.map(cumulativeSum);
 };
 
 // reverse words in ["hello world", "goodbye moon"] => ["olleh dlrow", "eybdoog noom"]
-const reversedWordsOf = function (strings) { 
+const reversedWordsOf = function (strings) {
   return strings.map(reverseString);
 };
 
@@ -182,7 +182,23 @@ const reversedWordsOf = function (strings) {
 const uniqueCharactersOf = function (strings) { };
 
 // generate ranges from [3, 5, 2] => [[0, 1, 2], [0, 1, 2, 3, 4], [0, 1]]
-const rangesOf = function (numbers) { };
+const range = function(from, to, step) {
+  const numbers = [];
+
+  for (let number = from; number < to; number += step) {
+    numbers.push(number);
+  }
+
+  return numbers;
+};
+
+const rangeTillNumber = function (number) {
+  return range(0, number, 1);
+};
+
+const rangesOf = function (numbers) { 
+  return numbers.map(rangeTillNumber);
+};
 
 // capitalize first letters of ["hello world", "goodbye moon"] => ["Hello World", "Goodbye Moon"]
 const capitalizedFirstLettersOf = function (strings) { };
