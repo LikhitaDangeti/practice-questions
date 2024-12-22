@@ -1,5 +1,9 @@
 // sumOf([1, 2, 3, 4]) => 10
-const sumOf = function (numbers) { }
+const sumOf = function (numbers) { 
+  return numbers.reduce(function (num1, num2) {
+    return num1 + num2;
+  }, 0)
+};
 
 // productOf([1, 2, 3, 4]) => 24
 const productOf = function (numbers) { }
