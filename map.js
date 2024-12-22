@@ -244,21 +244,25 @@ const isAdult = function (objects) {
 const abbreviations = function (objects) { };
 
 // extract scores for math tests from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [90, 80]
-const mathScores = function (objects) { 
+const mathScores = function (objects) {
   return objects.map(function (object) {
     return object.scores.math;
   })
 };
 
 // extract coordinates from [{ x: 1, y: 2 }, { x: 3, y: 4 }] => [[1, 2], [3, 4]]
-const extractCoordinates = function (objects) { 
+const extractCoordinates = function (objects) {
   return objects.map(function (object) {
-    return [object.x , object.y ];
+    return [object.x, object.y];
   })
 };
 
 // extract full name and age from [{ firstName: "Alice", lastName: "Smith", age: 25 }, { firstName: "Bob", lastName: "Brown", age: 30 }] => [["Alice Smith", 25], ["Bob Brown", 30]]
-const fullNameAndAge = function (objects) { };
+const fullNameAndAge = function (objects) {
+  return objects.map(function (object) {
+    return [object.firstName + ' ' + object.lastName, object.age];
+  })
+};
 
 // extract scores from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [[90, 85], [80, 75]]
 const extractScores = function (objects) { };
