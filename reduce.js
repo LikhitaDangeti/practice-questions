@@ -20,7 +20,11 @@ const averageOf = function (numbers) {
 }
 
 // minOf([3, 1, 4, 1, 5, 9, 2]) => 1
-const minOf = function (numbers) { }
+const minOf = function (numbers) { 
+  return numbers.reduce(function (num1, num2) {
+    return Math.min(num1, num2);
+  }, Infinity)
+}
 
 // maxOf([3, 1, 4, 1, 5, 9, 2]) => 9
 const maxOf = function (numbers) { }
