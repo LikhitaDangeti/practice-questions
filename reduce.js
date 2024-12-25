@@ -22,9 +22,9 @@ const maximum = (num1, num2) => Math.max(num1, num2);
 const maxOf = (numbers) => numbers.reduce(maximum, -Infinity);
 
 // sumPositiveNumbers([1, -2, 3, -4]) => 4
-const positiveNumbers = (number) => number > 0;
+const positives = (number) => number > 0;
 
-const sumPositiveNumbers = (numbers) => sumOf(numbers.filter(positiveNumbers));
+const sumPositiveNumbers = (numbers) => sumOf(numbers.filter(positives));
 
 // sumOfSquares([1, 2, 3, 4]) => 30
 const squares = (number) => Math.pow(number, 2);
@@ -37,7 +37,7 @@ const oddNumbers = (number) => number % 2 === 1;
 const sumOfOddNumbers = (numbers) => sumOf(numbers.filter(oddNumbers));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
-const countNegativeNumbers = function (numbers) {};
+const countNegativeNumbers = (numbers) => numbers.filter(positives).length;
 
 // findSumOfEvenSquares([1, 2, 3, 4]) => 20
 const findSumOfEvenSquares = function (numbers) {};
