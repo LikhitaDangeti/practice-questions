@@ -27,7 +27,9 @@ const positiveNumbers = (number) => number > 0;
 const sumPositiveNumbers = (numbers) => sumOf(numbers.filter(positiveNumbers));
 
 // sumOfSquares([1, 2, 3, 4]) => 30
-const sumOfSquares = function (numbers) {};
+const squares = (number) => Math.pow(number, 2);
+
+const sumOfSquares = (numbers) => sumOf(numbers.map(squares));
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
 const sumOfOddNumbers = function (numbers) {};
