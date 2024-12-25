@@ -32,15 +32,17 @@ const squares = (number) => Math.pow(number, 2);
 const sumOfSquares = (numbers) => sumOf(numbers.map(squares));
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
-const oddNumbers = (number) => number % 2 === 1;
+const isOdd = (number) => number % 2 === 1;
 
-const sumOfOddNumbers = (numbers) => sumOf(numbers.filter(oddNumbers));
+const sumOfOddNumbers = (numbers) => sumOf(numbers.filter(isOdd));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
 const countNegativeNumbers = (numbers) => numbers.filter(positives).length;
 
 // findSumOfEvenSquares([1, 2, 3, 4]) => 20
-const findSumOfEvenSquares = function (numbers) {};
+const isEven = (number) => number % 2 === 0;
+
+const findSumOfEvenSquares = (numbers) => sumOfSquares(numbers.filter(isEven));
 
 // concatenateWords(["hello", "world"]) => "helloworld"
 const concatenateWords = function (words) {};
