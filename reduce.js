@@ -1,33 +1,25 @@
 // sumOf([1, 2, 3, 4]) => 10
-const sum = function (num1, num2) {
-  return num1 + num2;
-};
+const sum = (num1, num2) => num1 + num2;
 
-const sumOf = function (numbers) {
-  return numbers.reduce(sum, 0)
-};
+const sumOf = (numbers) => numbers.reduce(sum, 0);
 
 // productOf([1, 2, 3, 4]) => 24
-const productOf = function (numbers) {
-  return numbers.reduce(function (multiplicand, multiplier) {
-    return multiplicand * multiplier;
-  }, 1)
-}
+const product = (multiplicand, multiplier) => multiplicand * multiplier;
+
+const productOf = (numbers) => numbers.reduce(product, 1);
 
 // averageOf([1, 2, 3, 4, 5]) => 3
-const averageOf = function (numbers) { 
-  return numbers.reduce(sum, 0) / numbers.length;
-}
+const averageOf = (numbers) => sumOf(numbers) / numbers.length;
 
 // minOf([3, 1, 4, 1, 5, 9, 2]) => 1
-const minOf = function (numbers) { 
-  return numbers.reduce(function (num1, num2) {
-    return Math.min(num1, num2);
-  }, Infinity)
-}
+const minimum = (num1, num2) => Math.min(num1, num2);
+
+const minOf = (numbers) => numbers.reduce(minimum, Infinity);
 
 // maxOf([3, 1, 4, 1, 5, 9, 2]) => 9
-const maxOf = function (numbers) { }
+const maximum = (num1, num2) => Math.max(num1, num2);
+
+const maxOf = (numbers) => numbers.reduce(maximum, -Infinity);
 
 // sumPositiveNumbers([1, -2, 3, -4]) => 4
 const sumPositiveNumbers = function (numbers) { }
