@@ -32,7 +32,9 @@ const squares = (number) => Math.pow(number, 2);
 const sumOfSquares = (numbers) => sumOf(numbers.map(squares));
 
 // sumOfOddNumbers([1, 2, 3, 4, 5]) => 9
-const sumOfOddNumbers = function (numbers) {};
+const oddNumbers = (number) => number % 2 === 1;
+
+const sumOfOddNumbers = (numbers) => sumOf(numbers.filter(oddNumbers));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
 const countNegativeNumbers = function (numbers) {};
