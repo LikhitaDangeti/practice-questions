@@ -106,7 +106,7 @@ const reversedWordsOf = function (strings) {
   return strings.map((string) => [...string].reverse().join(""));
 };
 
-// extract unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
+// extract first three unique characters from ["apple", "banana", "grape"] => ["apl", "ban", "gra"]
 // Maintain the order of their first appearance in each string
 const pushElements = function (array, element) {
   // slice vs if?
@@ -225,13 +225,22 @@ const cityAbbreviation = function (object) {
 const abbreviations = (objects) => objects.map(cityAbbreviation);
 
 // extract scores for math tests from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [90, 80]
-const mathScores = function (objects) {
+const _mathScores = function (objects) {
   return objects.map((object) => object.scores.math);
 };
 
+const mathScores = function (objects) {
+  return objects.map(({scores}) => scores.math);
+};
+
 // extract coordinates from [{ x: 1, y: 2 }, { x: 3, y: 4 }] => [[1, 2], [3, 4]]
-const extractCoordinates = function (objects) {
+const _extractCoordinates = function (objects) {
   return objects.map((object) => [object.x, object.y]);
+};
+
+//method 2
+const extractCoordinates = function (objects) {
+  return objects.map(({x, y}) => [x, y]);
 };
 
 // extract full name and age from [{ firstName: "Alice", lastName: "Smith", age: 25 }, { firstName: "Bob", lastName: "Brown", age: 30 }] => [["Alice Smith", 25], ["Bob Brown", 30]]
@@ -241,19 +250,31 @@ const fullNameAndAge = function (objects) {
   });
 };
 
+//method 2
+const _fullNameAndAge = function (objects) {
+  return objects.map(function ({ firstName, lastName, age }) {
+    return [firstName + " " + lastName, age]; 
+  })
+};
+
 // extract scores from [{ name: "Alice", scores: { math: 90, english: 85 } }, { name: "Bob", scores: { math: 80, english: 75 } }] => [[90, 85], [80, 75]]
-const extractScores = function (objects) {
+const _extractScores = function (objects) {
   return objects.map((object) => [object.scores.math, object.scores.english]);
+};
+
+//method 2
+const extractScores = function (objects) {
+  return objects.map(({scores}) => [scores.math, scores.english]);
 };
 
 // extract key-value pairs from [{ key: "a", value: 1 }, { key: "b", value: 2 }] => [["a", 1], ["b", 2]]
 const keyValuePairs = function (objects) {
-  return objects.map((object) => [object.key, object.value]);
+  return objects.map(({key, value}) => [key, value]);
 };
 
 // split full names into first and last names from [{ name: "Alice Smith" }, { name: "Bob Brown" }] => [["Alice", "Smith"], ["Bob", "Brown"]]
 const splitFullNames = function (objects) {
-  return objects.map((object) => object.name.split(" "));
+  return objects.map(({name}) => name.split(" "));
 };
 
 // normalize scores so they fall between 0 and 1 based on the max score from [{ name: "Alice", score: 80 }, { name: "Bob", score: 100 }] => [0.8, 1]
