@@ -37,7 +37,9 @@ const isOdd = (number) => number % 2 === 1;
 const sumOfOddNumbers = (numbers) => sumOf(numbers.filter(isOdd));
 
 // countNegativeNumbers([1, -2, 3, -4]) => 2
-const countNegativeNumbers = (numbers) => numbers.filter(positives).length;
+const negativeCount = (count, number) => (number < 0 ? count + 1 : count);
+
+const countNegativeNumbers = (numbers) => numbers.reduce(negativeCount, 0);
 
 // findSumOfEvenSquares([1, 2, 3, 4]) => 20
 const isEven = (number) => number % 2 === 0;
