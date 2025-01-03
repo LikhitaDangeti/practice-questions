@@ -47,16 +47,24 @@ const isEven = (number) => number % 2 === 0;
 const findSumOfEvenSquares = (numbers) => sumOfSquares(numbers.filter(isEven));
 
 // concatenateWords(["hello", "world"]) => "helloworld"
-const concatenateWords = function (words) {};
+const concatenate = (concatString, word) => concatString + word;
+
+const concatenateWords = (words) => words.reduce(concatenate, '');
 
 // longestWord(["apple", "banana", "cherry", "kiwi"]) => "banana"
-const longestWord = function (words) {};
+const longWord = (str1, str2) => (str2.length > str1.length ? str2 : str1);
+
+const longestWord = (words) => words.reduce(longWord, '');
 
 // shortestWord(["apple", "banana", "cherry", "kiwi"]) => "kiwi"
-const shortestWord = function (words) {};
+const shortWord = (str1, str2) => (str1.length < str2.length ? str1 : str2);
+
+const shortestWord = (words) => words.reduce(shortWord);
 
 // joinWithComma(["apple", "banana", "cherry"]) => "apple,banana,cherry"
-const joinWithComma = function (words) {};
+const concatWithComma = (concatString, word) => concatString + ',' + word;
+
+const joinWithComma = (words) => words.reduce(concatWithComma,);
 
 // reverseWords(["hello", "world"]) => "world hello"
 const reverseWords = function (words) {};
